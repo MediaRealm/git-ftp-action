@@ -2,7 +2,7 @@
 
 Uses [git-ftp](https://github.com/git-ftp/git-ftp) and [GitHub actions](https://github.com/features/actions) to deploy a GitHub repository to a FTP server.
 
-**⚠️ Attention:** This action works only with `actions/checkout@v1` for now. Make sure you use `v1` and not `v2` or `master`.
+**⚠️ Attention:** Make sure to use `actions/checkout` with `fetch-depth: 0`, since git-ftp needs the whole history in order to work.
 
 ## Example usage
 
@@ -14,7 +14,9 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: git-ftp push
       uses: sebastianpopp/git-ftp-action@releases/v3
       with:
