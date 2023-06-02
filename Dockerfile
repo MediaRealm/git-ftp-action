@@ -1,8 +1,8 @@
-FROM alpine:3.18
+FROM alpine:edge
 
 COPY LICENSE README.md /
 
-RUN apk add --no-cache bash git libssh2-dev build-base
+RUN apk add --no-cache bash git libssh2 libssh2-dev build-base
 
 RUN wget https://curl.haxx.se/download/curl-8.1.2.tar.gz \
   && tar -xf curl-8.1.2.tar.gz \
