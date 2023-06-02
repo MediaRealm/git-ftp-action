@@ -21,7 +21,7 @@ inputs:
     default: '--auto-init'
 runs:
   using: 'docker'
-  image: 'docker://sebastianpopp/git-ftp-action:fix-ssl-issue'
+  image: 'Dockerfile'
 branding:
   color: 'blue'
   icon: 'upload-cloud'
