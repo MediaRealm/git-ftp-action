@@ -7,7 +7,7 @@ RUN apk add --no-cache bash git libssh2-dev build-base
 RUN wget https://curl.haxx.se/download/curl-8.1.2.tar.gz \
   && tar -xf curl-8.1.2.tar.gz \
   && cd curl-8.1.2 \
-  && ./configure --with-libssh2=/usr/local \
+  && ./configure --with-openssl --with-libssh2=/usr/local \
   && make \
   && make install \
   && cd .. \
